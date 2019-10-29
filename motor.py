@@ -1,0 +1,58 @@
+import RPi.GPIO as gpio
+import time
+
+LEFT = 16
+
+gpio.setmode(gpio.BCM)
+gpio.setup(LEFT, gpio.OUT)
+l = gpio.PWM(LEFT, 50)
+l.start(0)
+
+try:
+    while True :
+        print("DUTY : 0")
+        l.ChangeDutyCycle(0)
+        time.sleep(2)
+        print("DUTY : 0.5")
+        l.ChangeDutyCycle(0.5)
+        time.sleep(2)
+        print("DUTY : 1")
+        l.ChangeDutyCycle(1)
+        time.sleep(2)
+        print("DUTY : 1.5")
+        l.ChangeDutyCycle(1.5)
+        time.sleep(2)
+        print("DUTY : 2")
+        l.ChangeDutyCycle(2)
+        time.sleep(2)
+        print("DUTY : 2.5")
+        l.ChangeDutyCycle(2.5)
+        time.sleep(2)
+        print("DUTY : 3")
+        l.ChangeDutyCycle(3)
+        time.sleep(2)
+        print("DUTY : 3.5")
+        l.ChangeDutyCycle(3.5)
+        time.sleep(2)
+        print("DUTY : 6.5")
+        l.ChangeDutyCycle(6.5)
+        time.sleep(2)
+        print("DUTY : 7")
+        l.ChangeDutyCycle(7)
+        time.sleep(2)
+        print("DUTY : 7.5")
+        l.ChangeDutyCycle(7.5)
+        time.sleep(2)
+        print("DUTY : 8")
+        l.ChangeDutyCycle(8)
+        time.sleep(2)
+        print("DUTY : 8.5")
+        l.ChangeDutyCycle(8.5)
+        time.sleep(2)
+        print("DUTY : 0")
+        l.ChangeDutyCycle(0)
+        time.sleep(2)
+
+except KeyboardInterrupt :
+    l.stop()
+    gpio.cleanup()
